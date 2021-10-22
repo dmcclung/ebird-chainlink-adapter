@@ -1,21 +1,19 @@
 module.exports = {
   env: {
-    browser: true,
-    commonjs: true,
-    es6: true,
-    mocha: true
+    es2021: true,
+    node: true,
+    jest: true,
   },
   extends: [
-    'standard'
+    'airbnb-base',
   ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
-  },
   parserOptions: {
-    ecmaVersion: 2018
+    ecmaVersion: 12,
+    sourceType: 'module',
   },
   rules: {
-    'standard/no-callback-literal': 0
-  }
+    'no-console': 'off',
+    semi: ['error', 'never'],
+    'arrow-parens': ['error', 'as-needed'],
+  },
 }
