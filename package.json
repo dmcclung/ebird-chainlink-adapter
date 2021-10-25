@@ -15,7 +15,8 @@
     "@chainlink/adapter-test-helpers": "^0.0.1",
     "@chainlink/external-adapter": "^0.2.3",
     "express": "^4.17.1",
-    "nodemon": "^2.0.14"
+    "ipfs-http-client": "^53.0.1",
+    "node-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
