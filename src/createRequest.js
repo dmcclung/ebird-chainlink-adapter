@@ -1,7 +1,6 @@
 import { Requester, Validator } from '@chainlink/external-adapter'
 import { create } from 'ipfs-http-client'
 import * as fs from 'fs'
-import { fetch } from 'node-fetch'
 
 // Define custom error scenarios for the API.
 // Return true for the adapter to retry.
@@ -60,32 +59,6 @@ const createRequest = async (input, callback) => {
   })
   console.log(`Picture CID ${imageCid}`)
 
-  const regionCode = 'US'
-  const ebirdApiCall = `https://api.ebird.org/v2/data/obs/${regionCode}/recent/notable`
-  const ebirdRes = await fetch(ebirdApiCall, {
-    headers: { 'X-eBirdApiToken': process.env.EBIRD_API_KEY },
-  }).json()
-
-  /*const recentNotable = ebirdRes[0]
-  {
-    "speciesCode": "rocwre",
-    "comName": "Rock Wren",
-    "sciName": "Salpinctes obsoletus",
-    "locId": "L16718749",
-    "locName": "Unicoi State Park",
-    "obsDt": "2021-10-23 19:21",
-    "howMany": 1,
-    "lat": 34.72398,
-    "lng": -83.724401,
-    "obsValid": false,
-    "obsReviewed": false,
-    "locationPrivate": true,
-    "subId": "S96617251"
-}*/
-
-  const metadata = toMetaData()
-
-
   // convert ebirdRes to metadata structure
 
   // The Requester allows API calls be retry in case of timeout
@@ -102,7 +75,5 @@ const createRequest = async (input, callback) => {
     callback(500, Requester.errored(jobRunID, error))
   }
 }
-
-const 
 
 export default createRequest
