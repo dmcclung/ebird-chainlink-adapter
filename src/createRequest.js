@@ -59,6 +59,8 @@ const createRequest = async (input, callback) => {
       ],
     }
 
+    // TODO: Pinning service call
+
     const metaDataCid = getContentIdentifier(JSON.stringify(metaData))
     response.data.result = metaDataCid
 
