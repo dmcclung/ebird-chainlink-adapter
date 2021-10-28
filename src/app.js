@@ -1,6 +1,6 @@
 import express from 'express'
 import createRequest from './createRequest'
-import fetchEbird from './fetchEbird'
+import fetchEbird from './ebirdHelper'
 
 const app = express()
 const port = 3000
